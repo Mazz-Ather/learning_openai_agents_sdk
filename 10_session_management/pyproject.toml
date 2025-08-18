@@ -1,10 +1,10 @@
 [project]
-name = "04-handoffs"
+name = "10-session-management"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "dotenv>=0.9.9",
+    "load-dotenv>=0.1.0",
     "openai-agents>=0.2.8",
 ]

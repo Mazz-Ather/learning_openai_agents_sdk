@@ -41,20 +41,11 @@ spanish_translator = Agent(
 
 # agent
 agent = Agent(
-    name='Orchestrator Agent',
-    instructions= "You are a translation agent. You use the tools given to you to translate."
-        "If asked for multiple translations, you call the relevant tools."
-   ,
-   tools=[
-       italian_translator.as_tool(
-           tool_name='translate_to_italian',
-           tool_description='Translate the user text to Italian'
-       ),
-        spanish_translator.as_tool(
-            tool_name='translate_to_spanish',
-            tool_description='Translate the user text to Spanish'
-        )
-   ]
+    name='Triage Agent',
+    instructions= "You are a translation agent. You handoff to the specific agent to translate.",
+    handoffs=[italian_translator,spanish_translator],
+    handoff_description= 'If asked for multiple translations, you call the relevant agents.'        
+   
 )
 
 #runner 
